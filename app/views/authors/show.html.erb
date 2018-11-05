@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h2>Name:<%= @author.first_name %></h2>
+<h3>Surname:<%= @author.last_name %></h3>
+<h3>Age:<%= @author.age %></h3>
+
+<%= link_to 'New Book', new_book_path %>
+
+<hr>
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
+<hr>
