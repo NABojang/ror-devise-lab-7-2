@@ -1,5 +1,20 @@
 <h1>New Author</h1>
+<h1>Add Posts</h1>
+<%= form_for :author, url:authors_path do |f| %>
 
+<p>
+<%= f.label :first_name %><br>
+<%= f.text_field(:first_name, {:class => 'form-control'})%>
+</p>
+<p>
+<%= f.label :last_name %><br>
+<%= f.text_field(:last_name, {:class => 'form-control'})%>
+</p>
+<p>
+<%= f.label :age %><br>
+<%= f.text_field(:age, {:class => 'form-control'})%>
+</p>
+<% end %>
 <%= render 'form', author: @author %>
 
 <%= link_to 'Back', authors_path %>

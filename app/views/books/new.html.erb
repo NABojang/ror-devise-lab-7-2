@@ -1,4 +1,19 @@
-<h1>New Book</h1>
+<h3> Add Book</h3>
+<%= form_for([@author, @author.books.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field(:title, {:class => "form-control"}) %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area(:body, {:class => "form-control"}) %>
+  </p>
+  <p>
+    <%= f.label :page_count %><br>
+    <%= f.text_area(:page_count, {:class => "form-control"}) %>
+  </p>
+  
+<% end %>
 
 <%= render 'form', book: @book %>
 

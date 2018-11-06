@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :set_author, only: [:show, :edit, :update, :destroy]
+  before_action :set_author, only: [:show, :edit, :update, :destroy, :create]
 
   # GET /authors
   # GET /authors.json
@@ -10,23 +10,25 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
-    @author = Author.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   # GET /authors/new
   def new
     @author = Author.new
+    @book = Book.new
   end
 
   # GET /authors/1/edit
   def edit
+
   end
 
   # POST /authors
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-
+      @book = Book.new(book_params)
     respond_to do |format|
       if @author.save
         format.html { redirect_to @author, notice: 'Author was successfully created.' }
