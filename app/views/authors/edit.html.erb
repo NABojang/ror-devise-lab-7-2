@@ -1,5 +1,24 @@
 <h1>Editing Author</h1>
-
+<h1>Edit Authors</h1>
+<%= form_for :author, url: author_path(@author), method: :patch do |f| %>
+<% if @author.errors.any? %>
+<% @author.errors.full_messages.each do |msg| %>
+<div class="aleart aleart-danger"><%= msg %></div>
+  <% end %>
+<% end %>
+<p>
+  <%= f.label :first_name %><br>
+<%= f.text_field(:first_name, {:class => 'form-control'})%>
+</p>
+<p>
+  <%= f.label :last_name %><br>
+<%= f.text_field(:last_name, {:class => 'form-control'})%>
+</p>
+<p>
+  <%= f.label :age %><br>
+<%= f.text_field(:age, {:class => 'form-control'})%>
+</p>
+<% end %>
 <%= render 'form', author: @author %>
 
 <%= link_to 'Show', @author %> |
